@@ -4,6 +4,7 @@ import logging
 import pandas as pd
 from typing import Dict, List, Tuple
 from kedro.framework.session import KedroSession
+from typing import Type
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -167,6 +168,7 @@ def make_props_data(path: str) -> Tuple[pd.Series, pd.DataFrame]:
             raise KeyError(f"Key '{key}' is missing in the parsed properties from the file.")
 
     props_dict["file_path"] = path
+    props_dict["Procedure type"] = procedure
     props_series = pd.Series(props_dict)
 
     dtype_mapping = procedures[procedure]["Data"]
@@ -176,3 +178,11 @@ def make_props_data(path: str) -> Tuple[pd.Series, pd.DataFrame]:
         raise ValueError(f"Error in reading {path} with dtype mapping: {dtype_mapping}") from e
 
     return props_series, data
+
+
+def props_to_sql(properties: pd.DataFrame) -> Type:
+    # create database
+    db = sql_database()
+    for procedure_type in properties["Procedure type"]:
+        append_to_db(properties[properties["Procedure type"]==procedure_type].dropna(axis=1))
+

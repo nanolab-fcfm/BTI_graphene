@@ -83,6 +83,7 @@ procedures:
       Laser voltage step: float
     Metadata:
       Start time: datetime
+      Sensor model: str
     Data:
       VL (V): float
       Power (W): float
