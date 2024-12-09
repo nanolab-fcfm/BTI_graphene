@@ -21,5 +21,10 @@ def separate_nanolab_dataset(experiments: Dict[str, Callable]) -> Tuple[pd.DataF
             logger.error(f"Error processing experiment {key}: {e}")
 
     consolidated_props = pd.DataFrame(props_list)
+
+    # we sort by date and reset the index
+    consolidated_props.sort_values(by="Start time", inplace=True)
+    consolidated_props.reset_index(drop=True, inplace=True)
+
     logger.info("Finished dataset separation.")
     return consolidated_props, indexed_data
