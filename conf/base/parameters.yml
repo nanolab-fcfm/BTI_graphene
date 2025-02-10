@@ -28,8 +28,10 @@ procedures:
   IVg:
     Parameters:
       Irange: float
+      NPLC: int
       N_avg: int
       Burn-in time: float
+      Chained execution: bool
       Chip group name: str
       Chip number: str
       Information: str
@@ -82,7 +84,9 @@ procedures:
   It:
     Parameters:
       Irange: float
+      NPLC: int
       N_avg: int
+      Chained execution: bool
       Chip group name: str
       Chip number: str
       Information: str
@@ -104,6 +108,7 @@ procedures:
   LaserCalibration:
     Parameters:
       N_avg: int
+      Chained execution: bool
       Optical fiber: str
       Laser wavelength: float
       Procedure version: str
@@ -112,8 +117,8 @@ procedures:
       Laser voltage start: float
       Laser voltage step: float
     Metadata:
-      Start time: datetime
       Sensor model: str
+      Start time: datetime
     Data:
       VL (V): float
       Power (W): float
