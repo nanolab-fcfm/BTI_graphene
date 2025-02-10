@@ -29,7 +29,7 @@ def get_data_key(path):
             '2024-11-29/ITt2024-11-29_1'
     """
     # Split the path into components based on the operating system's path separator
-    splitted_path = path.split(os.sep)
+    splitted_path = path.split("/")
 
     # Extract the file name (without the extension)
     file_name = splitted_path[-1].split(".")[0]
