@@ -2,6 +2,7 @@ procedures:
   ITt:
     Parameters:
       Irange: float
+      NPLC: int
       N_avg: int
       Chained execution: bool
       Chip group name: str
@@ -16,6 +17,7 @@ procedures:
       Show more: bool
       VDS: float
       VG: float
+      Pulse time: float
     Metadata:
       Start time: datetime
     Data:
@@ -28,10 +30,10 @@ procedures:
   IVg:
     Parameters:
       Irange: float
-      NPLC: int
       N_avg: int
-      Burn-in time: float
       Chained execution: bool
+      NPLC: int
+      Burn-in time: float
       Chip group name: str
       Chip number: str
       Information: str
@@ -84,9 +86,8 @@ procedures:
   It:
     Parameters:
       Irange: float
-      NPLC: int
       N_avg: int
-      Chained execution: bool
+      NPLC: int
       Chip group name: str
       Chip number: str
       Information: str
@@ -99,6 +100,10 @@ procedures:
       Show more: bool
       VDS: float
       VG: float
+      T step start time: float
+      Initial (current) T: float
+      Target T: float
+      Chained execution: bool
     Metadata:
       Start time: datetime
     Data:
@@ -108,8 +113,8 @@ procedures:
   LaserCalibration:
     Parameters:
       N_avg: int
-      Chained execution: bool
       Optical fiber: str
+      Chained execution: bool
       Laser wavelength: float
       Procedure version: str
       Step time: float
@@ -117,8 +122,8 @@ procedures:
       Laser voltage start: float
       Laser voltage step: float
     Metadata:
-      Sensor model: str
       Start time: datetime
+      Sensor model: str
     Data:
       VL (V): float
       Power (W): float
@@ -128,6 +133,12 @@ procedures:
       Chip group name: str
       Chip number: str
       Information: str
+      Initial (current) T: float
+      Target T: float      
+      T start: float
+      T end: float
+      T step: float
+      Step time: float
       Laser ON+OFF period: float
       Procedure version: str
       Sample: str
@@ -143,6 +154,7 @@ procedures:
   IV:
     Parameters:
       Irange: float
+      NPLC: int
       N_avg: int
       Burn-in time: float
       Chained execution: bool
