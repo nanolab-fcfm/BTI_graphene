@@ -13,10 +13,10 @@ dependencies = [
     "notebook",
     "kedro[jupyter]~=0.19.10",
     "kedro-datasets[pandas-csvdataset, pandas-exceldataset, pandas-parquetdataset, plotly-plotlydataset, plotly-jsondataset, matplotlib-matplotlibwriter]>=3.0",
-    "kedro-viz>=6.7.0",
+    "kedro-viz>=9.2.0",
     "scikit-learn~=1.5.1",
     "seaborn~=0.12.1",
-    "setuptools; python_version >= '3.12'"
+    "setuptools; python_version >= '3.12'",
 ]
 
 [project.scripts]
@@ -54,7 +54,7 @@ namespaces = false
 package_name = "nanolab_processing_base"
 project_name = "nanolab_processing_base"
 kedro_init_version = "0.19.10"
-tools = "['Linting', 'Testing', 'Custom Logging', 'Documentation', 'Data Structure', 'PySpark', 'Kedro Viz']"
+tools = "['Linting', 'Testing', 'Custom Logging', 'Documentation', 'Data Structure', 'Kedro Viz']"
 example_pipeline = "False"
 source_dir = "src"
 
@@ -86,4 +86,4 @@ select = [
 ignore = ["E501"]  # Ruff format takes care of line-too-long
 
 [tool.kedro_telemetry]
-project_id = "17501bacedf54ccf9bbfc0f5c7b90e2f"
+project_id = ""
