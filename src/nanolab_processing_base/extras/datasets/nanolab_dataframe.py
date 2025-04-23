@@ -87,14 +87,55 @@ def unix_time_to_datetime(unix_time_str: str) -> pd.Timestamp:
         raise ValueError(f"Invalid Unix timestamp: {unix_time_str}") from e
 
 
+def parse_info_line(info_line: str) -> Dict[str, str]:
+    """
+    Parses a line containing key-value pairs separated by ': '.
+
+    Args:
+        info_line (str): The line to parse.
+
+    Returns:
+        Dict[str, str]: A dictionary containing the key and the value. If the value is empty, returns 'None'.
+    """
+    if ": " in info_line:
+        key, value = info_line.split(": ", 1)
+        value = value if value.strip() else "None"
+    elif ":" in info_line:
+        key, value = info_line.split(":", 1)
+        value = value.strip() if value.strip() else "None"
+    else:
+        return {}
+
+    return {key.strip(): value.strip()}
+
+
 def make_dict_from_parsed_data(list_of_lines: List[str]) -> Dict[str, str]:
     """
     Converts a list of lines with key-value pairs separated by ': ' into a dictionary.
+    Handles the line starting with 'Information' separately using `parse_info_line`.
+
+    Args:
+        list_of_lines (List[str]): List of strings, each containing a key-value pair.
+
+    Returns:
+        Dict[str, str]: A dictionary with all parsed key-value pairs.
     """
-    try:
-        return {k: i for k, i in (pair.split(": ", 1) for pair in list_of_lines)}
-    except ValueError:
-        raise ValueError("Each line must contain a key and a value separated by ': '.")
+    # Separate the 'Information' line from the rest
+    info_line = next((line for line in list_of_lines if line.startswith("Information")), None)
+    rest_of_lines = [line for line in list_of_lines if not line.startswith("Information")]
+
+    # Parse the 'Information' line if it exists
+    dict_of_info = parse_info_line(info_line) if info_line else {}
+
+    # Parse remaining lines, skipping any that don't contain a valid separator
+    dict_rest_of_lines = {}
+    for line in rest_of_lines:
+        if ": " in line:
+            key, value = line.split(": ", 1)
+            dict_rest_of_lines[key.strip()] = value.strip()
+
+    # Combine both dictionaries
+    return {**dict_of_info, **dict_rest_of_lines}
 
 
 def read_comment_lines(file_path: str) -> Tuple[Dict[str, str], int]:
