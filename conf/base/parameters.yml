@@ -177,3 +177,53 @@ procedures:
     Data:
       Vsd (V): float
       I (A): float
+  Stress:
+    Parameters:
+      T end: float
+      T start: float
+      Chip group name: str
+      Chip number: str
+      Information: str
+      Initial (current) T: float
+      Procedure version: str
+      Sample: str
+      Sampling time (excluding Keithley): float
+      Show more: bool
+      Time OFF: float
+      Time ON: float
+      Target T: float
+      VG: float
+    Metadata:
+      Start time: datetime
+    Data:
+      t (s): float
+      Plate T (degC): float
+      Ambient T (degC): float
+      Clock (ms): float
+
+  VVg:
+    Parameters:
+      NPLC: int
+      Vrange: float
+      Burn-in time: float
+      Chip group name: str
+      Chip number: str
+      Drain-Source current: float
+      Information: str
+      Laser voltage: float
+      Laser wavelength: float
+      Procedure version: str
+      Sample: str
+      Step time: float
+      VG end: float
+      VG start: float
+      VG step: float
+    Metadata:
+      Start time: datetime
+    Data:
+      Vg (V): float
+      VDS (V): float
+      t (s): float
+      Plate T (degC): float
+      Ambient T (degC): float
+      Clock (ms): float
