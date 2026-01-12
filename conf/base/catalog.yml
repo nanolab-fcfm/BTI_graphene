@@ -137,14 +137,6 @@ project_CHIP3D:
   load_args:
     maxdepth: 2
 
-project_CHIP3E:
-  type: "partitions.PartitionedDataset"
-  path: "data/01_raw/project_3E"
-  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
-  filename_suffix: ".csv"
-  load_args:
-    maxdepth: 2
-
 project_CHIP3F:
   type: "partitions.PartitionedDataset"
   path: "data/01_raw/project_3F"
@@ -220,14 +212,6 @@ project_CHIP4D:
 project_CHIP4E:
   type: "partitions.PartitionedDataset"
   path: "data/01_raw/project_4E"
-  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
-  filename_suffix: ".csv"
-  load_args:
-    maxdepth: 2
-
-project_CHIP4F:
-  type: "partitions.PartitionedDataset"
-  path: "data/01_raw/project_4F"
   dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
   filename_suffix: ".csv"
   load_args:
@@ -319,10 +303,6 @@ properties_project_CHIP3D_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3D_with_CNPs.csv"
 
-properties_project_CHIP3E_with_CNPs:
-  type: "pandas.CSVDataset"
-  filepath: "data/03_primary/props/properties_project_CHIP3E_with_CNPs.csv"
-
 properties_project_CHIP3F_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3F_with_CNPs.csv"
@@ -362,10 +342,6 @@ properties_project_CHIP4D_with_CNPs:
 properties_project_CHIP4E_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4E_with_CNPs.csv"
-
-properties_project_CHIP4F_with_CNPs:
-  type: "pandas.CSVDataset"
-  filepath: "data/03_primary/props/properties_project_CHIP4F_with_CNPs.csv"
 
 properties_project_CHIP4G_with_CNPs:
   type: "pandas.CSVDataset"
@@ -438,10 +414,6 @@ properties_project_CHIP3D_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3D_with_CNPs_after_stress.csv"
 
-properties_project_CHIP3E_with_CNPs_after_stress:
-  type: "pandas.CSVDataset"
-  filepath: "data/03_primary/props/properties_project_CHIP3E_with_CNPs_after_stress.csv"
-
 properties_project_CHIP3F_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3F_with_CNPs_after_stress.csv"
@@ -482,10 +454,6 @@ properties_project_CHIP4E_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4E_with_CNPs_after_stress.csv"
 
-properties_project_CHIP4F_with_CNPs_after_stress:
-  type: "pandas.CSVDataset"
-  filepath: "data/03_primary/props/properties_project_CHIP4F_with_CNPs_after_stress.csv"
-
 properties_project_CHIP4G_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4G_with_CNPs_after_stress.csv"
@@ -501,3 +469,22 @@ properties_project_CHIP4I_with_CNPs_after_stress:
 properties_project_CHIP4J_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4J_with_CNPs_after_stress.csv"
+
+
+###### CNP Visualizations - Forward CNP Boxplots (per chip) ######
+
+forward_cnp_boxplot_CHIP1:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/forward_cnp_boxplot_CHIP1.png
+
+forward_cnp_boxplot_CHIP3:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/forward_cnp_boxplot_CHIP3.png
+
+forward_cnp_boxplot_CHIP4:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/forward_cnp_boxplot_CHIP4.png
+
+forward_cnp_boxplot_comparison:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/forward_cnp_boxplot_comparison.png
