@@ -87,3 +87,9 @@ ignore = ["E501"]  # Ruff format takes care of line-too-long
 
 [tool.kedro_telemetry]
 project_id = ""
+
+[dependency-groups]
+dev = [
+    "nbstripout>=0.8.2",
+    "pre-commit>=4.3.0",
+]
