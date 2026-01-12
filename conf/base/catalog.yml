@@ -32,10 +32,472 @@
 # TEMPLATE FOR CONFIGURING DATASET:
 # Copy and adapt the template below for your project.
 
-#project_<name_of_the_project>:
-#  type: "partitions.PartitionedDataset"
-#  path: "data/01_raw/project_<name_of_the_project>"
-#  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
-#  filename_suffix: ".csv"
-#  load_args:
-#    maxdepth: 2
+project_CHIP1A:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_1A"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+
+project_CHIP1B:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_1B"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP1C:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_1C"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP1D:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_1D"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP1E:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_1E"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP1F:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_1F"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP1G:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_1G"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP1H:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_1H"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP1I:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_1I"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP3A:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_3A"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP3B:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_3B"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP3C:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_3C"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP3D:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_3D"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP3E:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_3E"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP3F:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_3F"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP3G:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_3G"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP3H:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_3H"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP3I:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_3I"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP3J:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_3J"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP4A:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_4A"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP4B:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_4B"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP4C:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_4C"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP4D:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_4D"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP4E:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_4E"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP4F:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_4F"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP4G:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_4G"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP4H:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_4H"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP4I:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_4I"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+project_CHIP4J:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_4J"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+
+###### CNP calculations ######
+
+properties_project_CHIP1A_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP1A_with_CNPs.csv"
+
+properties_project_CHIP1B_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP1B_with_CNPs.csv"
+
+properties_project_CHIP1C_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP1C_with_CNPs.csv"
+
+properties_project_CHIP1D_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP1D_with_CNPs.csv"
+
+properties_project_CHIP1E_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP1E_with_CNPs.csv"
+
+properties_project_CHIP1F_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP1F_with_CNPs.csv"
+
+properties_project_CHIP1G_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP1G_with_CNPs.csv"
+
+properties_project_CHIP1H_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP1H_with_CNPs.csv"
+
+properties_project_CHIP1I_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP1I_with_CNPs.csv"
+
+properties_project_CHIP3A_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP3A_with_CNPs.csv"
+
+properties_project_CHIP3B_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP3B_with_CNPs.csv"
+
+properties_project_CHIP3C_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP3C_with_CNPs.csv"
+
+properties_project_CHIP3D_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP3D_with_CNPs.csv"
+
+properties_project_CHIP3E_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP3E_with_CNPs.csv"
+
+properties_project_CHIP3F_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP3F_with_CNPs.csv"
+
+properties_project_CHIP3G_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP3G_with_CNPs.csv"
+
+properties_project_CHIP3H_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP3H_with_CNPs.csv"
+
+properties_project_CHIP3I_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP3I_with_CNPs.csv"
+
+properties_project_CHIP3J_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP3J_with_CNPs.csv"
+
+properties_project_CHIP4A_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP4A_with_CNPs.csv"
+
+properties_project_CHIP4B_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP4B_with_CNPs.csv"
+
+properties_project_CHIP4C_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP4C_with_CNPs.csv"
+
+properties_project_CHIP4D_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP4D_with_CNPs.csv"
+
+properties_project_CHIP4E_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP4E_with_CNPs.csv"
+
+properties_project_CHIP4F_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP4F_with_CNPs.csv"
+
+properties_project_CHIP4G_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP4G_with_CNPs.csv"
+
+properties_project_CHIP4H_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP4H_with_CNPs.csv"
+
+properties_project_CHIP4I_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP4I_with_CNPs.csv"
+
+properties_project_CHIP4J_with_CNPs:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP4J_with_CNPs.csv"
+
+
+###### CNP calculations after stress ######
+
+properties_project_CHIP1A_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP1A_with_CNPs_after_stress.csv"
+
+properties_project_CHIP1B_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP1B_with_CNPs_after_stress.csv"
+
+properties_project_CHIP1C_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP1C_with_CNPs_after_stress.csv"
+
+properties_project_CHIP1D_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP1D_with_CNPs_after_stress.csv"
+
+properties_project_CHIP1E_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP1E_with_CNPs_after_stress.csv"
+
+properties_project_CHIP1F_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP1F_with_CNPs_after_stress.csv"
+
+properties_project_CHIP1G_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP1G_with_CNPs_after_stress.csv"
+
+properties_project_CHIP1H_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP1H_with_CNPs_after_stress.csv"
+
+properties_project_CHIP1I_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP1I_with_CNPs_after_stress.csv"
+
+properties_project_CHIP3A_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP3A_with_CNPs_after_stress.csv"
+
+properties_project_CHIP3B_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP3B_with_CNPs_after_stress.csv"
+
+properties_project_CHIP3C_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP3C_with_CNPs_after_stress.csv"
+
+properties_project_CHIP3D_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP3D_with_CNPs_after_stress.csv"
+
+properties_project_CHIP3E_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP3E_with_CNPs_after_stress.csv"
+
+properties_project_CHIP3F_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP3F_with_CNPs_after_stress.csv"
+
+properties_project_CHIP3G_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP3G_with_CNPs_after_stress.csv"
+
+properties_project_CHIP3H_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP3H_with_CNPs_after_stress.csv"
+
+properties_project_CHIP3I_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP3I_with_CNPs_after_stress.csv"
+
+properties_project_CHIP3J_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP3J_with_CNPs_after_stress.csv"
+
+properties_project_CHIP4A_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP4A_with_CNPs_after_stress.csv"
+
+properties_project_CHIP4B_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP4B_with_CNPs_after_stress.csv"
+
+properties_project_CHIP4C_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP4C_with_CNPs_after_stress.csv"
+
+properties_project_CHIP4D_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP4D_with_CNPs_after_stress.csv"
+
+properties_project_CHIP4E_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP4E_with_CNPs_after_stress.csv"
+
+properties_project_CHIP4F_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP4F_with_CNPs_after_stress.csv"
+
+properties_project_CHIP4G_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP4G_with_CNPs_after_stress.csv"
+
+properties_project_CHIP4H_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP4H_with_CNPs_after_stress.csv"
+
+properties_project_CHIP4I_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP4I_with_CNPs_after_stress.csv"
+
+properties_project_CHIP4J_with_CNPs_after_stress:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/properties_project_CHIP4J_with_CNPs_after_stress.csv"
