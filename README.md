@@ -26,15 +26,29 @@ uv sync
 
 This will create a virtual environment and install all dependencies.
 
-### 3. Pull data with DVC
+### 3. Configure DVC credentials (one-time setup)
+
+The raw data is stored on [DagsHub](https://dagshub.com/tomas.rojas.c/BTI_graphene). You need to configure your DagsHub token to pull the data:
+
+1. Get your token from https://dagshub.com/user/settings/tokens
+2. Configure DVC with your token:
+
+```bash
+uv run dvc remote modify --local origin access_key_id YOUR_DAGSHUB_TOKEN
+uv run dvc remote modify --local origin secret_access_key YOUR_DAGSHUB_TOKEN
+```
+
+> **Note:** Both `access_key_id` and `secret_access_key` should be set to your token.
+
+### 4. Pull data with DVC
 
 ```bash
 uv run dvc pull
 ```
 
-This downloads the tracked data files from the remote storage.
+This downloads the raw data (`data/01_raw`) from DagsHub.
 
-### 4. Run the pipeline
+### 5. Run the pipeline
 
 ```bash
 uv run kedro run
@@ -51,38 +65,41 @@ In order to get the best out of the template:
 
 ## Data Version Control (DVC)
 
-This project uses DVC to version control data files. The data is stored remotely and tracked via `data.dvc`.
+This project uses DVC to version control raw data files. The data is stored on [DagsHub](https://dagshub.com/tomas.rojas.c/BTI_graphene) and tracked via `data/01_raw.dvc`.
+
+### Data structure
+
+- `data/01_raw/` — Raw data (tracked by DVC, stored on DagsHub)
+- `data/03_primary/` — Generated from raw data (gitignored)
+- `data/04_feature/` to `data/08_reporting/` — Generated outputs (gitignored)
 
 ### Common DVC commands
 
 ```bash
-# Pull data from remote storage
+# Pull data from DagsHub
 uv run dvc pull
 
 # Check data status
 uv run dvc status
 
-# Add/update data after changes
-uv run dvc add data
+# Add/update raw data after changes
+uv run dvc add data/01_raw
 uv run dvc push
 
 # View data pipeline
 uv run dvc dag
 ```
 
-### Setting up a remote storage
+### DagsHub authentication
 
-To push data, you need to configure a DVC remote. For example, with S3:
-
-```bash
-uv run dvc remote add -d myremote s3://mybucket/path
-```
-
-Or with a local/network path:
+DVC is configured to use DagsHub's S3-compatible storage. To authenticate:
 
 ```bash
-uv run dvc remote add -d myremote /path/to/remote/storage
+uv run dvc remote modify --local origin access_key_id YOUR_DAGSHUB_TOKEN
+uv run dvc remote modify --local origin secret_access_key YOUR_DAGSHUB_TOKEN
 ```
+
+Get your token from: https://dagshub.com/user/settings/tokens
 
 ## How to run your Kedro pipeline
 
