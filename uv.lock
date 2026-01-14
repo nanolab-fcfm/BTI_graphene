@@ -1611,7 +1611,7 @@ wheels = [
 ]
 
 [package.optional-dependencies]
-matplotlib-matplotlibwriter = [
+matplotlib = [
     { name = "matplotlib", version = "3.9.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
 ]
 pandas-csvdataset = [
@@ -1652,7 +1652,7 @@ wheels = [
 ]
 
 [package.optional-dependencies]
-matplotlib-matplotlibwriter = [
+matplotlib = [
     { name = "matplotlib", version = "3.10.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
 ]
 pandas-csvdataset = [
@@ -2207,9 +2207,10 @@ dependencies = [
     { name = "ipython", version = "8.34.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
     { name = "jupyterlab" },
     { name = "kedro", extra = ["jupyter"] },
-    { name = "kedro-datasets", version = "4.1.0", source = { registry = "https://pypi.org/simple" }, extra = ["matplotlib-matplotlibwriter", "pandas-csvdataset", "pandas-exceldataset", "pandas-parquetdataset", "plotly-jsondataset", "plotly-plotlydataset"], marker = "python_full_version < '3.10'" },
-    { name = "kedro-datasets", version = "6.0.0", source = { registry = "https://pypi.org/simple" }, extra = ["matplotlib-matplotlibwriter", "pandas-csvdataset", "pandas-exceldataset", "pandas-parquetdataset", "plotly-jsondataset", "plotly-plotlydataset"], marker = "python_full_version >= '3.10'" },
+    { name = "kedro-datasets", version = "4.1.0", source = { registry = "https://pypi.org/simple" }, extra = ["matplotlib", "pandas-csvdataset", "pandas-exceldataset", "pandas-parquetdataset", "plotly-jsondataset", "plotly-plotlydataset"], marker = "python_full_version < '3.10'" },
+    { name = "kedro-datasets", version = "6.0.0", source = { registry = "https://pypi.org/simple" }, extra = ["matplotlib", "pandas-csvdataset", "pandas-exceldataset", "pandas-parquetdataset", "plotly-jsondataset", "plotly-plotlydataset"], marker = "python_full_version >= '3.10'" },
     { name = "kedro-viz" },
+    { name = "nanoplot" },
     { name = "notebook" },
     { name = "scikit-learn" },
     { name = "seaborn" },
@@ -2250,9 +2251,10 @@ requires-dist = [
     { name = "jinja2", marker = "extra == 'docs'", specifier = "<3.2.0" },
     { name = "jupyterlab", specifier = ">=3.0" },
     { name = "kedro", extras = ["jupyter"], specifier = "~=0.19.10" },
-    { name = "kedro-datasets", extras = ["matplotlib-matplotlibwriter", "pandas-csvdataset", "pandas-exceldataset", "pandas-parquetdataset", "plotly-jsondataset", "plotly-plotlydataset"], specifier = ">=3.0" },
+    { name = "kedro-datasets", extras = ["matplotlib", "pandas-csvdataset", "pandas-exceldataset", "pandas-parquetdataset", "plotly-jsondataset", "plotly-plotlydataset"], specifier = ">=3.0" },
     { name = "kedro-viz", specifier = ">=9.2.0" },
     { name = "myst-parser", marker = "extra == 'docs'", specifier = ">=1.0,<2.1" },
+    { name = "nanoplot", git = "https://github.com/nanolab-fcfm/nanoplot.git" },
     { name = "nbsphinx", marker = "extra == 'docs'", specifier = "==0.8.1" },
     { name = "notebook" },
     { name = "pytest", marker = "extra == 'dev'", specifier = "~=7.2" },
@@ -2273,6 +2275,16 @@ provides-extras = ["docs", "dev"]
 dev = [
     { name = "nbstripout", specifier = ">=0.8.2" },
     { name = "pre-commit", specifier = ">=4.3.0" },
+]
+
+[[package]]
+name = "nanoplot"
+version = "0.1.2"
+source = { git = "https://github.com/nanolab-fcfm/nanoplot.git#85184c445222587fb9a05ccd7f98a9f629f448f3" }
+dependencies = [
+    { name = "matplotlib", version = "3.9.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
+    { name = "matplotlib", version = "3.10.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
+    { name = "scienceplots" },
 ]
 
 [[package]]
@@ -3751,6 +3763,19 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/8d/61/ffdccecb0b39521d7060d6a6bc33c53d7f20d48d3511d6333cb01f26e979/ruff-0.1.15-py3-none-win32.whl", hash = "sha256:2417e1cb6e2068389b07e6fa74c306b2810fe3ee3476d5b8a96616633f40d14f", size = 6670488, upload-time = "2024-01-29T23:05:54.454Z" },
     { url = "https://files.pythonhosted.org/packages/2b/5f/3ba51cc770ed2b2df88efc32bba26759e6ac5c6149319a60913a85230936/ruff-0.1.15-py3-none-win_amd64.whl", hash = "sha256:3837ac73d869efc4182d9036b1405ef4c73d9b1f88da2413875e34e0d6919587", size = 7319395, upload-time = "2024-01-29T23:05:58.135Z" },
     { url = "https://files.pythonhosted.org/packages/c9/bd/c196493563d6bf8fe960f10b83926a3fae3a43a96eac6b263aecb96c61d7/ruff-0.1.15-py3-none-win_arm64.whl", hash = "sha256:9a933dfb1c14ec7a33cceb1e49ec4a16b51ce3c20fd42663198746efc0427360", size = 6998592, upload-time = "2024-01-29T23:06:01.904Z" },
+]
+
+[[package]]
+name = "scienceplots"
+version = "2.2.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "matplotlib", version = "3.9.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
+    { name = "matplotlib", version = "3.10.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/9b/5c/2617c08c046d9e5bd6034001efa0b58fcfa46fc8090c0c870370a63270e8/scienceplots-2.2.0.tar.gz", hash = "sha256:240bbc081fdf3a4025e0e4491c946b294ed5041f8c1c7f09f0e6071558aa59cc", size = 14375, upload-time = "2025-11-20T01:41:06.998Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0f/23/fbb25276057e99c25b9575df2b56698a68be28335b38fc81a63e3b82c638/scienceplots-2.2.0-py3-none-any.whl", hash = "sha256:ab0c0bec3096e1e16adb212d4752bbf624bd31e9d04191ea79de611d00ce88f0", size = 30341, upload-time = "2025-11-20T01:41:06.079Z" },
 ]
 
 [[package]]

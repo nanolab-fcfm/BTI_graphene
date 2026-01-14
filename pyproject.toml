@@ -17,6 +17,7 @@ dependencies = [
     "scikit-learn~=1.5.1",
     "seaborn~=0.12.1",
     "setuptools; python_version >= '3.12'",
+    "nanoplot",
 ]
 
 [project.scripts]
@@ -87,6 +88,9 @@ ignore = ["E501"]  # Ruff format takes care of line-too-long
 
 [tool.kedro_telemetry]
 project_id = ""
+
+[tool.uv.sources]
+nanoplot = { git = "https://github.com/nanolab-fcfm/nanoplot.git" }
 
 [dependency-groups]
 dev = [
