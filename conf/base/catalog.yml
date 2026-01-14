@@ -752,3 +752,211 @@ mean_shift_by_size_plot:
   metadata:
     kedro-viz:
       layer: reporting_3_size_comparison
+
+###### CNP After Annealing Histograms ######
+
+# CHIP1
+cnp_after_annealing_histogram_CHIP1A:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP1A.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP1B:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP1B.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP1C:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP1C.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP1D:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP1D.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP1E:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP1E.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP1F:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP1F.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP1G:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP1G.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP1H:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP1H.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP1I:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP1I.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+# CHIP3
+cnp_after_annealing_histogram_CHIP3A:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP3A.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP3B:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP3B.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP3C:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP3C.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP3D:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP3D.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP3F:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP3F.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP3G:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP3G.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP3H:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP3H.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP3I:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP3I.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP3J:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP3J.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+# CHIP4
+cnp_after_annealing_histogram_CHIP4A:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP4A.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP4B:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP4B.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP4C:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP4C.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP4D:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP4D.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP4E:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP4E.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP4G:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP4G.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP4H:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP4H.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP4I:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP4I.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_histogram_CHIP4J:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP4J.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_4_annealing_histograms
+
+cnp_after_annealing_deviation_summary:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_deviation_summary.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_5_annealing_summary
+
+cnp_after_annealing_deviation_histograms:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_after_annealing_deviation_histograms.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_5_annealing_summary
