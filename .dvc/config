@@ -1,4 +1,7 @@
 [core]
-    remote = gdrive_remote
-['remote "gdrive_remote"']
-    url = gdrive://1UmmqFLiWB8tVXK8GJ28ptVReCA65ub1k
+    remote = origin
+['remote "origin"']
+    url = s3://dvc
+    endpointurl = https://dagshub.com/tomas.rojas.c/BTI_graphene.s3
+    access_key_id = ""
+    secret_access_key = ""

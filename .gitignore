@@ -8,8 +8,20 @@ conf/local/**
 # ignore potentially sensitive credentials files
 conf/**/*credentials*
 
-# Data is tracked by DVC (see data.dvc)
-/data
+# Raw data is tracked by DVC, other data folders are generated
+/data/01_raw
+/data/03_primary/**
+!/data/03_primary/.gitkeep
+/data/04_feature/**
+!/data/04_feature/.gitkeep
+/data/05_model_input/**
+!/data/05_model_input/.gitkeep
+/data/06_models/**
+!/data/06_models/.gitkeep
+/data/07_model_output/**
+!/data/07_model_output/.gitkeep
+/data/08_reporting/**
+!/data/08_reporting/.gitkeep
 
 # ignore kedro-viz metadata
 .viz
