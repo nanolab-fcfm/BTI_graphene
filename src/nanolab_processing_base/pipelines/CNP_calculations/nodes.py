@@ -7,6 +7,12 @@ import numpy as np
 from typing import Dict, Callable
 import pandas as pd
 
+
+def normalize_key(key: str) -> str:
+    """Normalize path separators to forward slashes for cross-platform compatibility."""
+    return key.replace("\\", "/")
+
+
 def get_forward(df):
     forward = df["Vg (V)"].diff() > 0
     return df[forward | forward.shift(-1, fill_value=False)]
@@ -40,8 +46,10 @@ def get_partitioned_CNPs(data: Dict[str, Callable], props: pd.DataFrame) -> pd.D
     props = props.set_index("data_key")
 
     for key, experiment_callable in data.items():
+        # Normalize the key to use forward slashes (cross-platform compatibility)
+        normalized_key = normalize_key(key)
         # first we check that the experiment type is VVg
-        if props.loc[key, "Procedure type"] != "VVg":
+        if props.loc[normalized_key, "Procedure type"] != "VVg":
             continue
         try:
             df = experiment_callable()
@@ -53,13 +61,13 @@ def get_partitioned_CNPs(data: Dict[str, Callable], props: pd.DataFrame) -> pd.D
         forward_CNP_gate_voltage, forward_CNP_drain_voltage = get_CNP(forward)
         backward_CNP_gate_voltage, backward_CNP_drain_voltage = get_CNP(backward)
 
-        forward_CNP_drain_resistance = forward_CNP_drain_voltage / props.loc[key, "Drain-Source current"]
-        backward_CNP_drain_resistance = backward_CNP_drain_voltage / props.loc[key, "Drain-Source current"]
+        forward_CNP_drain_resistance = forward_CNP_drain_voltage / props.loc[normalized_key, "Drain-Source current"]
+        backward_CNP_drain_resistance = backward_CNP_drain_voltage / props.loc[normalized_key, "Drain-Source current"]
 
-        props.loc[key, "CNP_gate_voltage_forward"] = forward_CNP_gate_voltage
-        props.loc[key, "CNP_drain_resistance_forward"] = forward_CNP_drain_resistance
-        props.loc[key, "CNP_gate_voltage_backward"] = backward_CNP_gate_voltage
-        props.loc[key, "CNP_drain_resistance_backward"] = backward_CNP_drain_resistance
+        props.loc[normalized_key, "CNP_gate_voltage_forward"] = forward_CNP_gate_voltage
+        props.loc[normalized_key, "CNP_drain_resistance_forward"] = forward_CNP_drain_resistance
+        props.loc[normalized_key, "CNP_gate_voltage_backward"] = backward_CNP_gate_voltage
+        props.loc[normalized_key, "CNP_drain_resistance_backward"] = backward_CNP_drain_resistance
     
     props.reset_index(inplace=True)
         

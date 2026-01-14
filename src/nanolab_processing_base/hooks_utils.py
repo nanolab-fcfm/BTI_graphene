@@ -4,6 +4,13 @@ import logging
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+
+def normalize_key(key: str) -> str:
+    """Normalize path separators to forward slashes for cross-platform compatibility."""
+    return key.replace("\\", "/")
+
+
 def separate_nanolab_dataset(experiments: Dict[str, Callable]) -> Tuple[pd.DataFrame, Dict[str, pd.DataFrame]]:
     """
     Separates a NanoLab dataset into a consolidated properties DataFrame and indexed data.
@@ -12,13 +19,15 @@ def separate_nanolab_dataset(experiments: Dict[str, Callable]) -> Tuple[pd.DataF
     props_list = []
     indexed_data = {}
     for key, experiment_callable in experiments.items():
+        # Normalize the key to use forward slashes (cross-platform compatibility)
+        normalized_key = normalize_key(key)
         try:
             prop, data = experiment_callable()
             props_list.append(prop)
-            indexed_data[key] = data
-            logger.info(f"Processed experiment: {key}")
+            indexed_data[normalized_key] = data
+            logger.info(f"Processed experiment: {normalized_key}")
         except Exception as e:
-            logger.error(f"Error processing experiment {key}: {e}")
+            logger.error(f"Error processing experiment {normalized_key}: {e}")
 
     consolidated_props = pd.DataFrame(props_list)
 
