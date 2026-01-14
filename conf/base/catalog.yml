@@ -39,6 +39,9 @@ project_CHIP1A:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 
 project_CHIP1B:
@@ -48,6 +51,9 @@ project_CHIP1B:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP1C:
   type: "partitions.PartitionedDataset"
@@ -56,6 +62,9 @@ project_CHIP1C:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP1D:
   type: "partitions.PartitionedDataset"
@@ -64,6 +73,9 @@ project_CHIP1D:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP1E:
   type: "partitions.PartitionedDataset"
@@ -72,6 +84,9 @@ project_CHIP1E:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP1F:
   type: "partitions.PartitionedDataset"
@@ -80,6 +95,9 @@ project_CHIP1F:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP1G:
   type: "partitions.PartitionedDataset"
@@ -88,6 +106,9 @@ project_CHIP1G:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP1H:
   type: "partitions.PartitionedDataset"
@@ -96,6 +117,9 @@ project_CHIP1H:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP1I:
   type: "partitions.PartitionedDataset"
@@ -104,6 +128,9 @@ project_CHIP1I:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP3A:
   type: "partitions.PartitionedDataset"
@@ -112,6 +139,9 @@ project_CHIP3A:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP3B:
   type: "partitions.PartitionedDataset"
@@ -120,6 +150,9 @@ project_CHIP3B:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP3C:
   type: "partitions.PartitionedDataset"
@@ -128,6 +161,9 @@ project_CHIP3C:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP3D:
   type: "partitions.PartitionedDataset"
@@ -136,6 +172,9 @@ project_CHIP3D:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP3F:
   type: "partitions.PartitionedDataset"
@@ -144,6 +183,9 @@ project_CHIP3F:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP3G:
   type: "partitions.PartitionedDataset"
@@ -152,6 +194,9 @@ project_CHIP3G:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP3H:
   type: "partitions.PartitionedDataset"
@@ -160,6 +205,9 @@ project_CHIP3H:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP3I:
   type: "partitions.PartitionedDataset"
@@ -168,6 +216,9 @@ project_CHIP3I:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP3J:
   type: "partitions.PartitionedDataset"
@@ -176,6 +227,9 @@ project_CHIP3J:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP4A:
   type: "partitions.PartitionedDataset"
@@ -184,6 +238,9 @@ project_CHIP4A:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP4B:
   type: "partitions.PartitionedDataset"
@@ -192,6 +249,9 @@ project_CHIP4B:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP4C:
   type: "partitions.PartitionedDataset"
@@ -200,6 +260,9 @@ project_CHIP4C:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP4D:
   type: "partitions.PartitionedDataset"
@@ -208,6 +271,9 @@ project_CHIP4D:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP4E:
   type: "partitions.PartitionedDataset"
@@ -216,6 +282,9 @@ project_CHIP4E:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP4G:
   type: "partitions.PartitionedDataset"
@@ -224,6 +293,9 @@ project_CHIP4G:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP4H:
   type: "partitions.PartitionedDataset"
@@ -232,6 +304,9 @@ project_CHIP4H:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP4I:
   type: "partitions.PartitionedDataset"
@@ -240,6 +315,9 @@ project_CHIP4I:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 project_CHIP4J:
   type: "partitions.PartitionedDataset"
@@ -248,116 +326,200 @@ project_CHIP4J:
   filename_suffix: ".csv"
   load_args:
     maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
 
 ###### CNP calculations ######
 
 properties_project_CHIP1A_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP1A_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP1B_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP1B_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP1C_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP1C_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP1D_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP1D_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP1E_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP1E_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP1F_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP1F_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP1G_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP1G_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP1H_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP1H_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP1I_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP1I_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP3A_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3A_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP3B_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3B_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP3C_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3C_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP3D_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3D_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP3F_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3F_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP3G_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3G_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP3H_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3H_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP3I_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3I_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP3J_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3J_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP4A_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4A_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP4B_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4B_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP4C_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4C_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP4D_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4D_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP4E_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4E_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP4G_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4G_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP4H_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4H_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP4I_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4I_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 properties_project_CHIP4J_with_CNPs:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4J_with_CNPs.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
 
 
 ###### CNP calculations after stress ######
@@ -365,126 +527,219 @@ properties_project_CHIP4J_with_CNPs:
 properties_project_CHIP1A_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP1A_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP1B_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP1B_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP1C_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP1C_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP1D_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP1D_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP1E_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP1E_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP1F_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP1F_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP1G_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP1G_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP1H_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP1H_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP1I_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP1I_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP3A_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3A_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP3B_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3B_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP3C_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3C_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP3D_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3D_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP3F_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3F_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP3G_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3G_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP3H_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3H_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP3I_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3I_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP3J_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP3J_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP4A_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4A_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP4B_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4B_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP4C_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4C_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP4D_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4D_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP4E_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4E_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP4G_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4G_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP4H_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4H_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP4I_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4I_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 properties_project_CHIP4J_with_CNPs_after_stress:
   type: "pandas.CSVDataset"
   filepath: "data/03_primary/props/properties_project_CHIP4J_with_CNPs_after_stress.csv"
+  metadata:
+    kedro-viz:
+      layer: feature
 
 
 ###### CNP Visualizations - Forward CNP Boxplots (per chip) ######
 
 forward_cnp_boxplot_CHIP1:
   type: matplotlib.MatplotlibWriter
-  filepath: data/08_reporting/forward_cnp_boxplot_CHIP1.png
+  filepath: data/08_reporting/forward_cnp_boxplot_CHIP1.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_1_per_chip
 
 forward_cnp_boxplot_CHIP3:
   type: matplotlib.MatplotlibWriter
-  filepath: data/08_reporting/forward_cnp_boxplot_CHIP3.png
+  filepath: data/08_reporting/forward_cnp_boxplot_CHIP3.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_1_per_chip
 
 forward_cnp_boxplot_CHIP4:
   type: matplotlib.MatplotlibWriter
-  filepath: data/08_reporting/forward_cnp_boxplot_CHIP4.png
+  filepath: data/08_reporting/forward_cnp_boxplot_CHIP4.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_1_per_chip
 
 forward_cnp_boxplot_comparison:
   type: matplotlib.MatplotlibWriter
-  filepath: data/08_reporting/forward_cnp_boxplot_comparison.png
+  filepath: data/08_reporting/forward_cnp_boxplot_comparison.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_2_comparison

@@ -7,7 +7,10 @@ import matplotlib
 
 matplotlib.use("Agg")  # Use non-interactive backend for headless execution
 import matplotlib.pyplot as plt
+import nanoplot as nplt
 import pandas as pd
+
+nplt.apply()
 
 # Maximum absolute delta CNP gate voltage (V) to include in plots (filter outliers)
 DELTA_CNP_OUTLIER_THRESHOLD = 40
@@ -37,27 +40,37 @@ def create_forward_cnp_boxplot_chip(
         <= DELTA_CNP_OUTLIER_THRESHOLD
     ]
 
-    fig, ax = plt.subplots(figsize=(9, 5))
+    fig, ax = plt.subplots()
 
-    groups = combined_props.groupby("VG")
-    data = [g["delta_CNP_gate_voltage_forward"].dropna() for _, g in groups]
-    labels = [vg for vg, _ in groups]
+    # Fixed VG values and tick marks (same as comparison plot)
+    all_vg = sorted(combined_props["VG"].dropna().unique())
+    tick_vg = [-40, -20, 0, 20, 40]
+
+    data = []
+    for vg in all_vg:
+        vg_data = combined_props[combined_props["VG"] == vg][
+            "delta_CNP_gate_voltage_forward"
+        ].dropna()
+        data.append(vg_data.values if len(vg_data) > 0 else [])
 
     ax.boxplot(
         data,
-        tick_labels=labels,
+        positions=range(len(all_vg)),
         showfliers=True,
     )
 
-    ax.set_xlabel(r"Stress $V_G$ (V)", fontsize=12)
-    ax.set_ylabel(r"$\Delta$ CNP forward $V_G$ (V)", fontsize=12)
-    ax.set_title(f"Forward CNP Shift vs Stress Voltage - {chip_name}", fontsize=14)
+    # Set x-axis ticks and labels only for specified tick values
+    tick_positions = [i for i, vg in enumerate(all_vg) if vg in tick_vg]
+    tick_labels = [str(int(vg)) for vg in all_vg if vg in tick_vg]
+    ax.set_xticks(tick_positions)
+    ax.set_xticklabels(tick_labels)
 
-    ax.grid(True, axis="y", alpha=0.3)
-    ax.spines["top"].set_visible(False)
-    ax.spines["right"].set_visible(False)
+    # Set y-axis ticks (same as comparison plot)
+    ax.set_yticks([10, 0, -10, -20])
 
-    plt.tight_layout()
+    ax.set_xlabel(r"Stress $V_G$ (V)")
+    ax.set_ylabel(r"$\Delta$ CNP forward $V_G$ (V)")
+
     return fig
 
 
@@ -109,15 +122,19 @@ def create_forward_cnp_boxplot_comparison(
         | set(chip4_data["VG"].dropna())
     )
 
-    # Wider figure for better separation
-    fig, ax = plt.subplots(figsize=(20, 6))
+    # Tick marks to display
+    tick_vg = [-40, -20, 0, 20, 40]
+
+    fig, ax = plt.subplots()
 
     # Colors for each chip
     colors = {"CHIP1": "#1f77b4", "CHIP3": "#ff7f0e", "CHIP4": "#2ca02c"}
 
-    # Width of each box and spacing between VG groups
-    box_width = 0.15  # Thinner boxes
-    group_spacing = 1.5  # More space between VG groups
+    # Spacing: boxes within group are close, groups are separated
+    box_width = 0.25  # Width of each box
+    box_spacing = 0.3  # Space between box centers within a VG group
+    group_spacing = 1.5  # Space between VG groups
+
     positions_chip1 = []
     positions_chip3 = []
     positions_chip4 = []
@@ -128,16 +145,14 @@ def create_forward_cnp_boxplot_comparison(
     data_chip4 = []
 
     for i, vg in enumerate(all_vg):
-        base_pos = (
-            i * group_spacing
-        )  # Base position for this VG group with wider spacing
+        base_pos = i * group_spacing  # Base position for this VG group
 
         # CHIP1
         chip1_vg_data = chip1_data[chip1_data["VG"] == vg][
             "delta_CNP_gate_voltage_forward"
         ].dropna()
         data_chip1.append(chip1_vg_data.values if len(chip1_vg_data) > 0 else [])
-        positions_chip1.append(base_pos - box_width * 1.2)
+        positions_chip1.append(base_pos - box_spacing)
 
         # CHIP3
         chip3_vg_data = chip3_data[chip3_data["VG"] == vg][
@@ -151,7 +166,7 @@ def create_forward_cnp_boxplot_comparison(
             "delta_CNP_gate_voltage_forward"
         ].dropna()
         data_chip4.append(chip4_vg_data.values if len(chip4_vg_data) > 0 else [])
-        positions_chip4.append(base_pos + box_width * 1.2)
+        positions_chip4.append(base_pos + box_spacing)
 
     # Create boxplots for each chip
     bp1 = ax.boxplot(
@@ -177,43 +192,36 @@ def create_forward_cnp_boxplot_comparison(
     )
 
     # Color the boxes
-    for bp, color, chip in [
-        (bp1, colors["CHIP1"], "CHIP1"),
-        (bp3, colors["CHIP3"], "CHIP3"),
-        (bp4, colors["CHIP4"], "CHIP4"),
+    for bp, color in [
+        (bp1, colors["CHIP1"]),
+        (bp3, colors["CHIP3"]),
+        (bp4, colors["CHIP4"]),
     ]:
         for patch in bp["boxes"]:
             patch.set_facecolor(color)
-            patch.set_alpha(0.7)
-        for element in ["whiskers", "caps", "medians"]:
-            for item in bp[element]:
-                item.set_color("black")
         for flier in bp["fliers"]:
             flier.set_markerfacecolor(color)
             flier.set_markeredgecolor(color)
 
-    # Set x-axis ticks and labels (adjusted for new spacing)
-    ax.set_xticks([i * group_spacing for i in range(len(all_vg))])
-    ax.set_xticklabels([str(vg) for vg in all_vg])
+    # Set x-axis ticks and labels only for specified tick values
+    tick_positions = [i * group_spacing for i, vg in enumerate(all_vg) if vg in tick_vg]
+    tick_labels = [str(int(vg)) for vg in all_vg if vg in tick_vg]
+    ax.set_xticks(tick_positions)
+    ax.set_xticklabels(tick_labels)
+
+    # Set y-axis ticks
+    ax.set_yticks([10, 0, -10, -20])
 
     # Labels and title
-    ax.set_xlabel(r"Stress $V_G$ (V)", fontsize=12)
-    ax.set_ylabel(r"$\Delta$ CNP forward $V_G$ (V)", fontsize=12)
-    ax.set_title(
-        "Forward CNP Shift vs Stress Voltage - All Chips Comparison", fontsize=14
-    )
+    ax.set_xlabel(r"Stress $V_G$ (V)")
+    ax.set_ylabel(r"$\Delta$ CNP forward $V_G$ (V)")
 
     # Legend
     legend_patches = [
-        plt.Line2D([0], [0], color=colors["CHIP1"], lw=10, alpha=0.7, label="CHIP1"),
-        plt.Line2D([0], [0], color=colors["CHIP3"], lw=10, alpha=0.7, label="CHIP3"),
-        plt.Line2D([0], [0], color=colors["CHIP4"], lw=10, alpha=0.7, label="CHIP4"),
+        plt.Line2D([0], [0], color=colors["CHIP1"], lw=10, label="CHIP1"),
+        plt.Line2D([0], [0], color=colors["CHIP3"], lw=10, label="CHIP3"),
+        plt.Line2D([0], [0], color=colors["CHIP4"], lw=10, label="CHIP4"),
     ]
-    ax.legend(handles=legend_patches, loc="upper left", frameon=False)
+    ax.legend(handles=legend_patches)
 
-    ax.grid(True, axis="y", alpha=0.3)
-    ax.spines["top"].set_visible(False)
-    ax.spines["right"].set_visible(False)
-
-    plt.tight_layout()
     return fig
