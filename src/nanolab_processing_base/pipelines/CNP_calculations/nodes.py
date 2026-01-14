@@ -42,6 +42,9 @@ def get_CNP(df):
 
 def get_partitioned_CNPs(data: Dict[str, Callable], props: pd.DataFrame) -> pd.DataFrame:
 
+    # Normalize data_key column for cross-platform compatibility (handles backslashes from Windows)
+    props["data_key"] = props["data_key"].apply(normalize_key)
+    
     # temporary set 'data_key' to be the index of the props dataframe, at the end of the function we will reset the index and set the column back to 'data_key'
     props = props.set_index("data_key")
 
