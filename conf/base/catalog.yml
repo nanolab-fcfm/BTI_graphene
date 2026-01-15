@@ -960,3 +960,35 @@ cnp_after_annealing_deviation_histograms:
   metadata:
     kedro-viz:
       layer: reporting_5_annealing_summary
+
+###### CNP Spatial Heatmaps ######
+
+cnp_shift_heatmap_CHIP1:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_shift_heatmap_CHIP1.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_6_spatial_heatmaps
+
+cnp_shift_heatmap_CHIP3:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_shift_heatmap_CHIP3.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_6_spatial_heatmaps
+
+cnp_shift_heatmap_CHIP4:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/cnp_shift_heatmap_CHIP4.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_6_spatial_heatmaps
+
+###### CNP First/Last Comparison ######
+
+first_last_resistance_plot_CHIP3A:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/first_last_resistance_plot_CHIP3A.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_7_first_last_comparison

@@ -5,6 +5,7 @@ from kedro_datasets.partitions import PartitionedDataset
 from nanolab_processing_base.hooks_utils import separate_nanolab_dataset
 
 import logging
+from pathlib import Path
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -52,8 +53,13 @@ class DynamicDatasetHook:
         try:
             for project in self.projects:
                 # Define paths for the datasets
-                properties_path = f"data/03_primary/properties_{project}.csv"
-                data_path = f"data/03_primary/data_{project}"
+                properties_path = Path(f"data/03_primary/properties_{project}.csv")
+                data_path = Path(f"data/03_primary/data_{project}")
+
+                # Skip if output already exists
+                if properties_path.exists() and data_path.exists():
+                    logger.info(f"Skipping {project}: output already exists")
+                    continue
 
                 logger.info(f"Processing dataset: {project}")
                 dataset = catalog.load(project)  # This might trigger catalog hooks
