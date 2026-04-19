@@ -201,6 +201,38 @@ procedures:
       Ambient T (degC): float
       Clock (ms): float
 
+  VVgCooldown:
+    Parameters:
+      NPLC: int
+      Vrange: float
+      Burn-in time: float
+      Chip group name: str
+      Chip number: str
+      Drain-Source current: float
+      Information: str
+      Inter-sweep wait: float
+      Laser voltage: float
+      Laser wavelength: float
+      Number of sweep repetitions: int
+      Number of sweeps: int
+      Procedure version: str
+      Sample: str
+      Step time: float
+      VG end: float
+      VG start: float
+      VG step: float
+    Metadata:
+      Start time: datetime
+    Data:
+      Vg (V): float
+      VDS (V): float
+      t (s): float
+      sweeps_num: int
+      sweep_num: int
+      Plate T (degC): float
+      Ambient T (degC): float
+      Clock (ms): float
+
   VVg:
     Parameters:
       NPLC: int

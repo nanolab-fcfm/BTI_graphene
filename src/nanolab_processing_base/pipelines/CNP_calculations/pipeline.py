@@ -5,7 +5,7 @@ generated using Kedro 0.19.11
 
 from kedro.pipeline import node, Pipeline, pipeline  # noqa
 
-from .nodes import get_partitioned_CNPs, after_stress_CNP_calculations
+from .nodes import get_partitioned_CNPs, get_partitioned_CNPs_baseline, after_stress_CNP_calculations
 
 
 def create_pipeline(**kwargs) -> Pipeline:
@@ -129,21 +129,6 @@ def create_pipeline(**kwargs) -> Pipeline:
                 func=after_stress_CNP_calculations,
                 inputs="properties_project_CHIP1H_with_CNPs",
                 outputs="properties_project_CHIP1H_with_CNPs_after_stress",
-            ),
-        ]
-    )
-    CHIP1I = pipeline(
-        [
-            node(
-                func=get_partitioned_CNPs,
-                inputs=["data_project_CHIP1I", "properties_project_CHIP1I"],
-                outputs="properties_project_CHIP1I_with_CNPs",
-                name="sample1I_CNPs",
-            ),
-            node(
-                func=after_stress_CNP_calculations,
-                inputs="properties_project_CHIP1I_with_CNPs",
-                outputs="properties_project_CHIP1I_with_CNPs_after_stress",
             ),
         ]
     )
@@ -420,7 +405,399 @@ def create_pipeline(**kwargs) -> Pipeline:
         ]
     )
 
-    return (
+    # --- Baseline chips ---
+    CHIP1A_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP1A_baseline", "properties_project_CHIP1A_baseline"],
+                outputs="properties_project_CHIP1A_baseline_with_CNPs",
+                name="sample1A_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP1A_baseline_with_CNPs",
+                outputs="properties_project_CHIP1A_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP1B_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP1B_baseline", "properties_project_CHIP1B_baseline"],
+                outputs="properties_project_CHIP1B_baseline_with_CNPs",
+                name="sample1B_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP1B_baseline_with_CNPs",
+                outputs="properties_project_CHIP1B_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP1C_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP1C_baseline", "properties_project_CHIP1C_baseline"],
+                outputs="properties_project_CHIP1C_baseline_with_CNPs",
+                name="sample1C_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP1C_baseline_with_CNPs",
+                outputs="properties_project_CHIP1C_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP1D_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP1D_baseline", "properties_project_CHIP1D_baseline"],
+                outputs="properties_project_CHIP1D_baseline_with_CNPs",
+                name="sample1D_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP1D_baseline_with_CNPs",
+                outputs="properties_project_CHIP1D_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP1E_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP1E_baseline", "properties_project_CHIP1E_baseline"],
+                outputs="properties_project_CHIP1E_baseline_with_CNPs",
+                name="sample1E_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP1E_baseline_with_CNPs",
+                outputs="properties_project_CHIP1E_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP1F_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP1F_baseline", "properties_project_CHIP1F_baseline"],
+                outputs="properties_project_CHIP1F_baseline_with_CNPs",
+                name="sample1F_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP1F_baseline_with_CNPs",
+                outputs="properties_project_CHIP1F_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP1G_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP1G_baseline", "properties_project_CHIP1G_baseline"],
+                outputs="properties_project_CHIP1G_baseline_with_CNPs",
+                name="sample1G_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP1G_baseline_with_CNPs",
+                outputs="properties_project_CHIP1G_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP1H_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP1H_baseline", "properties_project_CHIP1H_baseline"],
+                outputs="properties_project_CHIP1H_baseline_with_CNPs",
+                name="sample1H_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP1H_baseline_with_CNPs",
+                outputs="properties_project_CHIP1H_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP3A_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP3A_baseline", "properties_project_CHIP3A_baseline"],
+                outputs="properties_project_CHIP3A_baseline_with_CNPs",
+                name="sample3A_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP3A_baseline_with_CNPs",
+                outputs="properties_project_CHIP3A_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP3B_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP3B_baseline", "properties_project_CHIP3B_baseline"],
+                outputs="properties_project_CHIP3B_baseline_with_CNPs",
+                name="sample3B_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP3B_baseline_with_CNPs",
+                outputs="properties_project_CHIP3B_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP3C_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP3C_baseline", "properties_project_CHIP3C_baseline"],
+                outputs="properties_project_CHIP3C_baseline_with_CNPs",
+                name="sample3C_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP3C_baseline_with_CNPs",
+                outputs="properties_project_CHIP3C_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP3D_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP3D_baseline", "properties_project_CHIP3D_baseline"],
+                outputs="properties_project_CHIP3D_baseline_with_CNPs",
+                name="sample3D_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP3D_baseline_with_CNPs",
+                outputs="properties_project_CHIP3D_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP3F_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP3F_baseline", "properties_project_CHIP3F_baseline"],
+                outputs="properties_project_CHIP3F_baseline_with_CNPs",
+                name="sample3F_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP3F_baseline_with_CNPs",
+                outputs="properties_project_CHIP3F_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP3G_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP3G_baseline", "properties_project_CHIP3G_baseline"],
+                outputs="properties_project_CHIP3G_baseline_with_CNPs",
+                name="sample3G_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP3G_baseline_with_CNPs",
+                outputs="properties_project_CHIP3G_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP3H_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP3H_baseline", "properties_project_CHIP3H_baseline"],
+                outputs="properties_project_CHIP3H_baseline_with_CNPs",
+                name="sample3H_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP3H_baseline_with_CNPs",
+                outputs="properties_project_CHIP3H_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP3I_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP3I_baseline", "properties_project_CHIP3I_baseline"],
+                outputs="properties_project_CHIP3I_baseline_with_CNPs",
+                name="sample3I_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP3I_baseline_with_CNPs",
+                outputs="properties_project_CHIP3I_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP3J_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP3J_baseline", "properties_project_CHIP3J_baseline"],
+                outputs="properties_project_CHIP3J_baseline_with_CNPs",
+                name="sample3J_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP3J_baseline_with_CNPs",
+                outputs="properties_project_CHIP3J_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP4A_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP4A_baseline", "properties_project_CHIP4A_baseline"],
+                outputs="properties_project_CHIP4A_baseline_with_CNPs",
+                name="sample4A_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP4A_baseline_with_CNPs",
+                outputs="properties_project_CHIP4A_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP4B_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP4B_baseline", "properties_project_CHIP4B_baseline"],
+                outputs="properties_project_CHIP4B_baseline_with_CNPs",
+                name="sample4B_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP4B_baseline_with_CNPs",
+                outputs="properties_project_CHIP4B_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP4C_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP4C_baseline", "properties_project_CHIP4C_baseline"],
+                outputs="properties_project_CHIP4C_baseline_with_CNPs",
+                name="sample4C_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP4C_baseline_with_CNPs",
+                outputs="properties_project_CHIP4C_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP4D_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP4D_baseline", "properties_project_CHIP4D_baseline"],
+                outputs="properties_project_CHIP4D_baseline_with_CNPs",
+                name="sample4D_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP4D_baseline_with_CNPs",
+                outputs="properties_project_CHIP4D_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP4E_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP4E_baseline", "properties_project_CHIP4E_baseline"],
+                outputs="properties_project_CHIP4E_baseline_with_CNPs",
+                name="sample4E_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP4E_baseline_with_CNPs",
+                outputs="properties_project_CHIP4E_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP4G_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP4G_baseline", "properties_project_CHIP4G_baseline"],
+                outputs="properties_project_CHIP4G_baseline_with_CNPs",
+                name="sample4G_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP4G_baseline_with_CNPs",
+                outputs="properties_project_CHIP4G_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP4H_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP4H_baseline", "properties_project_CHIP4H_baseline"],
+                outputs="properties_project_CHIP4H_baseline_with_CNPs",
+                name="sample4H_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP4H_baseline_with_CNPs",
+                outputs="properties_project_CHIP4H_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP4I_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP4I_baseline", "properties_project_CHIP4I_baseline"],
+                outputs="properties_project_CHIP4I_baseline_with_CNPs",
+                name="sample4I_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP4I_baseline_with_CNPs",
+                outputs="properties_project_CHIP4I_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+    CHIP4J_baseline = pipeline(
+        [
+            node(
+                func=get_partitioned_CNPs_baseline,
+                inputs=["data_project_CHIP4J_baseline", "properties_project_CHIP4J_baseline"],
+                outputs="properties_project_CHIP4J_baseline_with_CNPs",
+                name="sample4J_baseline_CNPs",
+            ),
+            node(
+                func=after_stress_CNP_calculations,
+                inputs="properties_project_CHIP4J_baseline_with_CNPs",
+                outputs="properties_project_CHIP4J_baseline_with_CNPs_after_stress",
+            ),
+        ]
+    )
+
+    non_baseline = (
         CHIP1A
         + CHIP1B
         + CHIP1C
@@ -429,7 +806,6 @@ def create_pipeline(**kwargs) -> Pipeline:
         + CHIP1F
         + CHIP1G
         + CHIP1H
-        + CHIP1I
         + CHIP3A
         + CHIP3B
         + CHIP3C
@@ -449,3 +825,34 @@ def create_pipeline(**kwargs) -> Pipeline:
         + CHIP4I
         + CHIP4J
     )
+
+    baseline = (
+        CHIP1A_baseline
+        + CHIP1B_baseline
+        + CHIP1C_baseline
+        + CHIP1D_baseline
+        + CHIP1E_baseline
+        + CHIP1F_baseline
+        + CHIP1G_baseline
+        + CHIP1H_baseline
+        + CHIP3A_baseline
+        + CHIP3B_baseline
+        + CHIP3C_baseline
+        + CHIP3D_baseline
+        + CHIP3F_baseline
+        + CHIP3G_baseline
+        + CHIP3H_baseline
+        + CHIP3I_baseline
+        + CHIP3J_baseline
+        + CHIP4A_baseline
+        + CHIP4B_baseline
+        + CHIP4C_baseline
+        + CHIP4D_baseline
+        + CHIP4E_baseline
+        + CHIP4G_baseline
+        + CHIP4H_baseline
+        + CHIP4I_baseline
+        + CHIP4J_baseline
+    )
+
+    return pipeline(non_baseline, tags="non_baseline") + pipeline(baseline, tags="baseline")
