@@ -787,13 +787,6 @@ cnp_after_annealing_histogram_CHIP1H:
     kedro-viz:
       layer: reporting_4_annealing_histograms
 
-cnp_after_annealing_histogram_CHIP1I:
-  type: matplotlib.MatplotlibWriter
-  filepath: data/08_reporting/cnp_after_annealing_histograms/CHIP1I.pdf
-  metadata:
-    kedro-viz:
-      layer: reporting_4_annealing_histograms
-
 # CHIP3
 cnp_after_annealing_histogram_CHIP3A:
   type: matplotlib.MatplotlibWriter

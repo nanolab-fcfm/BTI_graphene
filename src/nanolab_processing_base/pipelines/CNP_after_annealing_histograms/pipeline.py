@@ -13,7 +13,7 @@ from .nodes import create_cnp_histogram, create_cnp_deviation_summary, create_cn
 def create_pipeline(**kwargs) -> Pipeline:
     # Define all samples for each chip (excluding removed samples: 3E, 4F)
     samples = {
-        "CHIP1": ["A", "B", "C", "D", "E", "F", "G", "H", "I"],
+        "CHIP1": ["A", "B", "C", "D", "E", "F", "G", "H"],  # I, J removed (faulty)
         "CHIP3": ["A", "B", "C", "D", "F", "G", "H", "I", "J"],  # E removed
         "CHIP4": ["A", "B", "C", "D", "E", "G", "H", "I", "J"],  # F removed
     }

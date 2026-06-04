@@ -12,7 +12,7 @@ from .nodes import create_cnp_shift_heatmap
 
 def create_pipeline(**kwargs) -> Pipeline:
     # Define sample letters for each chip (excluding removed samples: 3E, 4F)
-    chip1_samples = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]
+    chip1_samples = ["A", "B", "C", "D", "E", "F", "G", "H"]  # I, J removed (faulty)
     chip3_samples = ["A", "B", "C", "D", "F", "G", "H", "I", "J"]  # E removed
     chip4_samples = ["A", "B", "C", "D", "E", "G", "H", "I", "J"]  # F removed
 
