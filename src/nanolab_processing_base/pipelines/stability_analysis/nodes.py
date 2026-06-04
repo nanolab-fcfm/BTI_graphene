@@ -168,7 +168,9 @@ def get_stability_CNPs_new(
     return result
 
 
-def create_stability_plot_new(cnp_df: pd.DataFrame) -> plt.Figure:
+def create_stability_plot_new(
+    cnp_df: pd.DataFrame, stress_label: str | None = None
+) -> plt.Figure:
     """Plot CNP forward gate voltage vs elapsed time (h) for new-format stability data."""
     fig, ax = plt.subplots()
 
@@ -178,6 +180,70 @@ def create_stability_plot_new(cnp_df: pd.DataFrame) -> plt.Figure:
     ax.scatter(t, cnp, s=16)
     ax.set_xlabel("Elapsed time (h)")
     ax.set_ylabel(r"CNP forward $V_G$ (V)")
+
+    sources = ", ".join(f"{s}.csv" for s in sorted(cnp_df["source_key"].astype(str).unique()))
+    heading = f"CNP recovery after {stress_label} stress" if stress_label else "CNP recovery"
+    ax.set_title(f"{heading}\nsource: {sources}", fontsize=9)
+
+    fig.tight_layout()
+
+    return fig
+
+
+def create_stability_plot_dual(
+    cnp_plus: pd.DataFrame, cnp_minus: pd.DataFrame
+) -> plt.Figure:
+    """Plot CNP-vs-time recovery for +40 V (left axis) and -40 V (right axis) stresses.
+
+    Both axes use the same ΔV span (driven by the larger drift) and are anchored to
+    each curve's own first point, so the two recoveries are directly comparable.
+    """
+    fig, ax_minus = plt.subplots()
+
+    cnp_plus = cnp_plus.sort_values("t_elapsed_h")
+    cnp_minus = cnp_minus.sort_values("t_elapsed_h")
+
+    start_plus = cnp_plus["CNP_gate_voltage_forward"].iloc[0]
+    start_minus = cnp_minus["CNP_gate_voltage_forward"].iloc[0]
+    span_plus = start_plus - cnp_plus["CNP_gate_voltage_forward"].min()
+    span_minus = start_minus - cnp_minus["CNP_gate_voltage_forward"].min()
+    span = max(span_plus, span_minus)
+    margin = span * 0.05
+
+    color_minus = "tab:red"
+    ax_minus.scatter(
+        cnp_minus["t_elapsed_h"],
+        cnp_minus["CNP_gate_voltage_forward"],
+        s=16,
+        color=color_minus,
+        label="-40 V",
+    )
+    ax_minus.set_xlabel("Elapsed time (h)")
+    ax_minus.set_ylabel("CNP evolution after -40 V stress (V)", color=color_minus)
+    ax_minus.tick_params(axis="y", labelcolor=color_minus)
+    ax_minus.set_ylim(start_minus - span - margin, start_minus + margin)
+
+    color_plus = "tab:blue"
+    ax_plus = ax_minus.twinx()
+    ax_plus.scatter(
+        cnp_plus["t_elapsed_h"],
+        cnp_plus["CNP_gate_voltage_forward"],
+        s=16,
+        color=color_plus,
+        label="+40 V",
+    )
+    ax_plus.set_ylabel("CNP evolution after +40 V stress (V)", color=color_plus)
+    ax_plus.tick_params(axis="y", labelcolor=color_plus)
+    ax_plus.set_ylim(start_plus - span - margin, start_plus + margin)
+
+    src_plus = ", ".join(f"{s}.csv" for s in sorted(cnp_plus["source_key"].astype(str).unique()))
+    src_minus = ", ".join(f"{s}.csv" for s in sorted(cnp_minus["source_key"].astype(str).unique()))
+    ax_plus.set_title(
+        "CNP recovery after gate stress\n"
+        f"+40 V source: {src_plus}\n-40 V source: {src_minus}",
+        fontsize=8,
+    )
+
     fig.tight_layout()
 
     return fig
@@ -216,7 +282,7 @@ def fit_stretched_exponential(cnp_df: pd.DataFrame) -> pd.DataFrame:
 
 
 def create_stretched_exp_fit_plot(
-    cnp_df: pd.DataFrame, fit_params: pd.DataFrame
+    cnp_df: pd.DataFrame, fit_params: pd.DataFrame, stress_label: str | None = None
 ) -> plt.Figure:
     """Scatter plot of CNP data with the stretched-exponential fit overlaid."""
     t = cnp_df["t_elapsed_h"].values
@@ -250,6 +316,9 @@ def create_stretched_exp_fit_plot(
     ax.legend()
     ax.set_xlabel("Elapsed time (h)")
     ax.set_ylabel(r"CNP forward $V_G$ (V)")
+    sources = ", ".join(f"{s}.csv" for s in sorted(cnp_df["source_key"].astype(str).unique()))
+    heading = f"Stretched-exp fit — CNP recovery after {stress_label} stress" if stress_label else "Stretched-exp fit"
+    ax.set_title(f"{heading}\nsource: {sources}", fontsize=9)
     fig.tight_layout()
 
     return fig
@@ -289,7 +358,7 @@ def fit_double_exponential(cnp_df: pd.DataFrame) -> pd.DataFrame:
 
 
 def create_double_exp_fit_plot(
-    cnp_df: pd.DataFrame, fit_params: pd.DataFrame
+    cnp_df: pd.DataFrame, fit_params: pd.DataFrame, stress_label: str | None = None
 ) -> plt.Figure:
     """
     Scatter plot of CNP data with the double-exponential fit overlaid.
@@ -327,6 +396,9 @@ def create_double_exp_fit_plot(
     ax.legend()
     ax.set_xlabel("Elapsed time (h)")
     ax.set_ylabel(r"CNP forward $V_G$ (V)")
+    sources = ", ".join(f"{s}.csv" for s in sorted(cnp_df["source_key"].astype(str).unique()))
+    heading = f"Double-exp fit — CNP recovery after {stress_label} stress" if stress_label else "Double-exp fit"
+    ax.set_title(f"{heading}\nsource: {sources}", fontsize=9)
     fig.tight_layout()
 
     return fig
@@ -361,6 +433,7 @@ def create_stability_plot(
     cnp_df: pd.DataFrame,
     t_max_h: float | None = None,
     y_lim: tuple | None = None,
+    stress_label: str | None = None,
 ) -> plt.Figure:
     """
     Plot CNP forward gate voltage as a function of time.
@@ -387,6 +460,9 @@ def create_stability_plot(
 
     ax.set_xlabel("Elapsed time (h)")
     ax.set_ylabel(r"CNP forward $V_G$ (V)")
+    sources = ", ".join(f"{s}.csv" for s in sorted(cnp_df["source_key"].astype(str).unique()))
+    heading = f"CNP recovery after {stress_label} stress" if stress_label else "CNP recovery"
+    ax.set_title(f"{heading}\nsource: {sources}", fontsize=9)
     fig.tight_layout()
 
     return fig

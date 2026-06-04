@@ -1065,6 +1065,31 @@ stability_stretched_fit_plot_CHIP3G_stability_new:
     kedro-viz:
       layer: reporting_1_per_chip
 
+stability_raw_CHIP3G_stability_new_minus40:
+  type: "partitions.PartitionedDataset"
+  path: "data/01_raw/project_3G_stability_new_minus40"
+  dataset: "nanolab_processing_base.extras.datasets.nanolab_dataset.NanoLabDataSet"
+  filename_suffix: ".csv"
+  load_args:
+    maxdepth: 2
+  metadata:
+    kedro-viz:
+      layer: raw
+
+stability_cnp_CHIP3G_stability_new_minus40:
+  type: "pandas.CSVDataset"
+  filepath: "data/03_primary/props/stability_cnp_CHIP3G_stability_new_minus40.csv"
+  metadata:
+    kedro-viz:
+      layer: primary
+
+stability_plot_CHIP3G_stability_new_dual:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/stability_cnp_CHIP3G_stability_new_dual.pdf
+  metadata:
+    kedro-viz:
+      layer: reporting_1_per_chip
+
 ###### Baseline vs Non-baseline comparison plots ######
 
 baseline_vs_nonbaseline_CHIP1:
