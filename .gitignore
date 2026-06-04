@@ -138,7 +138,7 @@ notebooks/*
 !notebooks/.gitkeep
 
 # pyenv
-.python-version
+# .python-version is committed so `uv sync`/`uv run` pins the interpreter on a fresh clone
 
 # celery beat schedule file
 celerybeat-schedule
